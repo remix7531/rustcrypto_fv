@@ -15,7 +15,7 @@ pub(super) fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
     if sha2_hwcap::get() {
         unsafe { sha256_compress(state, blocks) }
     } else {
-        super::soft::compress(state, blocks);
+        super::soft_compact::compress(state, blocks);
     }
 }
 

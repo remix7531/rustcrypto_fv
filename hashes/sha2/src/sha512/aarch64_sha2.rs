@@ -13,7 +13,7 @@ pub(super) fn compress(state: &mut [u64; 8], blocks: &[[u8; 128]]) {
     if sha3_hwcap::get() {
         unsafe { sha512_compress(state, blocks) }
     } else {
-        super::soft::compress(state, blocks);
+        super::soft_compact::compress(state, blocks);
     }
 }
 

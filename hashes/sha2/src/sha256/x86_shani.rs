@@ -107,6 +107,6 @@ pub(super) fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
             digest_blocks(state, blocks);
         }
     } else {
-        super::soft::compress(state, blocks);
+        super::soft_compact::compress(state, blocks);
     }
 }
