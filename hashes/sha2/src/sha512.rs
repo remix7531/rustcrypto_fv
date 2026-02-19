@@ -22,6 +22,6 @@ fn to_u64s(block: &[u8; 128]) -> [u64; 16] {
 ///
 /// This is a low-level "hazmat" API which provides direct access to the core
 /// functionality of SHA-512.
-pub(crate) fn compress512(state: &mut [u64; 8], blocks: &[[u8; 128]]) {
+pub fn compress512(state: &mut [u64; 8], blocks: &[[u8; 128]]) {
     compress(state, blocks)
 }

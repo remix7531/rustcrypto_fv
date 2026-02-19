@@ -9,7 +9,6 @@
 # Directories
 PROOF_DIR            := proofs/fstar
 EXTRACTION_DIR       := $(PROOF_DIR)/extraction
-DIGEST_EXTRACTION_DIR := $(PROOF_DIR)/digest_extraction
 CACHE_DIR            := .fstar-cache/checked
 HINT_DIR             := .fstar-cache/hints
 
@@ -19,7 +18,6 @@ FSTAR_FLAGS     = \
 	--warn_error -321-331-241-274-239-271-242 \
 	--silent \
 	--include $(EXTRACTION_DIR) \
-	--include $(DIGEST_EXTRACTION_DIR) \
 	--include $(HAX_LIB)/proof-libs/fstar/core \
 	--include $(HAX_LIB)/proof-libs/fstar/rust_primitives \
 	--include $(HAX_LIB)/proofs/fstar/extraction
@@ -54,7 +52,7 @@ help:
 # Extract F* code from Rust using hax
 extract:
 	@printf "$(BBLUE)[EXTRACT]$(RESET) Extracting F* from Rust code (soft backend)...\n"
-	@mkdir -p $(EXTRACTION_DIR) $(DIGEST_EXTRACTION_DIR)
+	@mkdir -p $(EXTRACTION_DIR)
 	@RUSTFLAGS="$(RUSTFLAGS)" cargo hax $(CARGO_FEATURES) into fstar
 	@printf "$(GREEN)✓$(RESET) Extraction complete! Files are in $(EXTRACTION_DIR)\n"
 

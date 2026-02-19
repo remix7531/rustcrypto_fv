@@ -1,5 +1,5 @@
 [package]
-name = "sha2"
+name = "sha2_fv"
 version = "0.11.0-rc.5"
 description = """
 Pure Rust implementation of the SHA-2 hash function family
@@ -10,7 +10,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 edition = "2024"
 rust-version = "1.85"
-documentation = "https://docs.rs/sha2"
+documentation = "https://docs.rs/sha2_fv"
 repository = "https://github.com/RustCrypto/hashes"
 keywords = ["sha2", "hash", "digest"]
 categories = ["cryptography", "no-std"]
@@ -29,6 +29,7 @@ hex-literal = "1"
 
 [features]
 default = ["sha256", "sha512"]
+compress = []
 sha256 = []
 sha256_224 = []
 sha512 = []
